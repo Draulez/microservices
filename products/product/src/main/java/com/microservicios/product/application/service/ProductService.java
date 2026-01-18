@@ -6,6 +6,7 @@ import com.microservicios.product.domain.repository.ProductRepository;
 import com.microservicios.product.domain.valueObject.Money;
 import com.microservicios.product.dto.request.CreateProductRequest;
 import com.microservicios.product.dto.response.ProductResponse;
+import com.microservicios.product.dto.response.ProductResponseSimple;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -34,11 +35,12 @@ public class ProductService
         return toResponse(product);
     }
 
-    public ProductResponse getById(String id)
+    public ProductResponseSimple getById(String id)
     {
         Product product = productRepository.findById(id).orElseThrow(() -> new ProductNotFoundException(id));
 
-        return toResponse(product);
+        ProductResponseSimple result = new ProductResponseSimple(product.getId(), product.getName(), product.getPrice().getAmount());
+        return result;
     }
 
     public List<ProductResponse> getAll()

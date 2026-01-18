@@ -3,6 +3,7 @@ package com.microservicios.product.infrastructure.controller.v1;
 import com.microservicios.product.application.service.ProductService;
 import com.microservicios.product.dto.request.CreateProductRequest;
 import com.microservicios.product.dto.response.ProductResponse;
+import com.microservicios.product.dto.response.ProductResponseSimple;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -32,7 +33,7 @@ public class ProductController
     // GET METHODS
 
     @GetMapping("/{id}")
-    public ProductResponse getById(@PathVariable String id)
+    public ProductResponseSimple getById(@PathVariable String id)
     {
         return productService.getById(id);
     }

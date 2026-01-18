@@ -17,7 +17,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 @RestController
-@RequestMapping("/clients/v1")
+@RequestMapping("/apì/clients/v1")
 public class ClientController
 {
     private final ClientService clientService;

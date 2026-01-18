@@ -1,0 +1,15 @@
+spring.application.name = order-service
+
+server.port=8082
+
+spring.datasource.url=jdbc:mariadb://localhost:3306/orders
+spring.datasource.username=
+spring.datasource.password=
+spring.datasource.driver-class-name=org.mariadb.jdbc.Driver
+
+# JPA
+spring.jpa.hibernate.ddl-auto=create-drop
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MariaDBDialect
+
+eureka.client.service-url.defaultZona=http://localhost:8761/eureka/
